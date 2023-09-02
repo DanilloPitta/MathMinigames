@@ -1,0 +1,250 @@
+[gd_scene load_steps=11 format=3 uid="uid://dn5h2oxpanf63"]
+
+[ext_resource type="Script" path="res://Scripts/level_passed.gd" id="1_3li5h"]
+[ext_resource type="FontFile" uid="uid://dm8dwovr228s4" path="res://Assets/Fonts/Pixellari.ttf" id="1_ru0yo"]
+[ext_resource type="Texture2D" uid="uid://cmqylq4eksro2" path="res://Assets/Sprites/Star/star_colored.png" id="2_e7r5d"]
+[ext_resource type="Texture2D" uid="uid://betr875gai2xn" path="res://Assets/Icons/reload.png" id="3_37yjq"]
+[ext_resource type="Texture2D" uid="uid://ca6oj84jj5b6x" path="res://Assets/Sprites/Star/star_blank.png" id="3_tdrm0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kud0e"]
+bg_color = Color(0, 0.552941, 0.831373, 1)
+border_width_bottom = 3
+border_color = Color(0, 0.393333, 0.59, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mvvv0"]
+bg_color = Color(0, 0.552941, 0.831373, 1)
+border_width_bottom = 3
+border_color = Color(0, 0.393333, 0.59, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_riict"]
+bg_color = Color(0, 0.552941, 0.831373, 1)
+border_width_bottom = 3
+border_color = Color(0, 0.393333, 0.59, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dkdo"]
+bg_color = Color(0, 0.552941, 0.831373, 1)
+border_width_bottom = 3
+border_color = Color(0, 0.393333, 0.59, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i61x4"]
+bg_color = Color(0, 0.552941, 0.831373, 1)
+border_width_bottom = 3
+border_color = Color(0, 0.393333, 0.59, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="LevelPassed" type="CanvasLayer"]
+script = ExtResource("1_3li5h")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="CenterContainer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -131.5
+offset_right = 113.0
+offset_bottom = 131.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.666667)
+
+[node name="Title" type="Label" parent="CenterContainer/Control/ColorRect"]
+layout_mode = 0
+offset_top = 19.0
+offset_right = 226.0
+offset_bottom = 63.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_ru0yo")
+theme_override_font_sizes/font_size = 20
+text = "NÍVEL CONCLUIDO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Advance" type="Button" parent="CenterContainer/Control/ColorRect"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 206.5
+offset_right = 149.0
+offset_bottom = 241.5
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_ru0yo")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_kud0e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mvvv0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_riict")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7dkdo")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i61x4")
+text = "AVANÇAR"
+
+[node name="Reload" type="Button" parent="CenterContainer/Control/ColorRect"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 207.0
+offset_right = 213.0
+offset_bottom = 242.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_ru0yo")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_kud0e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mvvv0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_riict")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7dkdo")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i61x4")
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Control/ColorRect/Reload"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.297872
+anchor_top = 0.171429
+anchor_right = 0.702128
+anchor_bottom = 0.714286
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_37yjq")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Stars" type="Control" parent="CenterContainer/Control/ColorRect"]
+layout_mode = 1
+anchor_top = 0.250951
+anchor_right = 1.0
+anchor_bottom = 0.372624
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Colored" type="Control" parent="CenterContainer/Control/ColorRect/Stars"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="1" type="TextureRect" parent="CenterContainer/Control/ColorRect/Stars/Colored"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.159292
+anchor_top = -0.125
+anchor_right = 0.336283
+anchor_bottom = 1.125
+offset_left = 2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_e7r5d")
+
+[node name="2" type="TextureRect" parent="CenterContainer/Control/ColorRect/Stars/Colored"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.402655
+anchor_top = -0.125
+anchor_right = 0.579646
+anchor_bottom = 1.125
+offset_left = 2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_e7r5d")
+
+[node name="3" type="TextureRect" parent="CenterContainer/Control/ColorRect/Stars/Colored"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.646018
+anchor_top = -0.125
+anchor_right = 0.823009
+anchor_bottom = 1.125
+offset_left = 2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_e7r5d")
+
+[node name="Blank" type="Control" parent="CenterContainer/Control/ColorRect/Stars"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="1" type="TextureRect" parent="CenterContainer/Control/ColorRect/Stars/Blank"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.159292
+anchor_top = -0.125
+anchor_right = 0.336283
+anchor_bottom = 1.125
+offset_left = 2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_tdrm0")
+
+[node name="2" type="TextureRect" parent="CenterContainer/Control/ColorRect/Stars/Blank"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.402655
+anchor_top = -0.125
+anchor_right = 0.579646
+anchor_bottom = 1.125
+offset_left = 2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_tdrm0")
+
+[node name="3" type="TextureRect" parent="CenterContainer/Control/ColorRect/Stars/Blank"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.646018
+anchor_top = -0.125
+anchor_right = 0.823009
+anchor_bottom = 1.125
+offset_left = 2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_tdrm0")
