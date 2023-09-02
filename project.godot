@@ -10,14 +10,14 @@ config_version=5
 
 [application]
 
-config/name="MathVaults"
-run/main_scene="res://Levels/level_1.tscn"
+config/name="MathMinigames"
+run/main_scene="res://MiniGames/MathVaults/Levels/level_1.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://Scripts/global.gd"
+Global="*res://MiniGames/MathVaults/Scripts/global.gd"
 
 [display]
 
