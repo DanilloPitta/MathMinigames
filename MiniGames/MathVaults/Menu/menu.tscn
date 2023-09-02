@@ -1,0 +1,149 @@
+[gd_scene load_steps=8 format=3 uid="uid://iylsjmou6saw"]
+
+[ext_resource type="FontFile" uid="uid://dm8dwovr228s4" path="res://MiniGames/MathVaults/Assets/Fonts/Pixellari.ttf" id="1_fkvoi"]
+[ext_resource type="Texture2D" uid="uid://n2fj6bvs5f0a" path="res://MiniGames/MathVaults/Menu/Assets/background.png" id="1_pongb"]
+[ext_resource type="Script" path="res://MiniGames/MathVaults/Menu/menu.gd" id="2_8sjn0"]
+[ext_resource type="Texture2D" uid="uid://dmg5t6c4or3u6" path="res://MiniGames/MathVaults/Menu/Assets/title.png" id="2_cjhpf"]
+[ext_resource type="Script" path="res://MiniGames/MathVaults/Menu/LevelBtn.gd" id="5_pt514"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3knu7"]
+bg_color = Color(0.439216, 0.494118, 0.521569, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_5at7l"]
+Button/fonts/font = ExtResource("1_fkvoi")
+Button/styles/disabled = SubResource("StyleBoxFlat_3knu7")
+Button/styles/focus = SubResource("StyleBoxFlat_3knu7")
+Button/styles/hover = SubResource("StyleBoxFlat_3knu7")
+Button/styles/normal = SubResource("StyleBoxFlat_3knu7")
+Button/styles/pressed = SubResource("StyleBoxFlat_3knu7")
+Label/fonts/font = ExtResource("1_fkvoi")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_5at7l")
+script = ExtResource("2_8sjn0")
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(0.45098, 0.45098, 0.45098, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pongb")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Main" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -112.5
+offset_right = 117.0
+offset_bottom = 138.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.862745)
+
+[node name="TextureRect" type="TextureRect" parent="Main"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.0
+offset_top = -31.0
+offset_right = 92.0
+offset_bottom = 31.0
+grow_horizontal = 2
+texture = ExtResource("2_cjhpf")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Play" type="Button" parent="Main"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0662393
+anchor_top = 0.322709
+anchor_right = 0.933761
+anchor_bottom = 0.501992
+grow_horizontal = 2
+grow_vertical = 2
+text = "JOGAR"
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Button" parent="Main"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0683761
+anchor_top = 0.591633
+anchor_right = 0.935897
+anchor_bottom = 0.770916
+grow_horizontal = 2
+grow_vertical = 2
+text = "VOLTAR"
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelSelector" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -267.5
+offset_top = -125.5
+offset_right = 267.5
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.862745)
+
+[node name="Title" type="Label" parent="LevelSelector"]
+layout_mode = 0
+offset_left = 22.5
+offset_top = 14.5
+offset_right = 190.5
+offset_bottom = 40.5
+theme_override_font_sizes/font_size = 22
+text = "Selecione o nível:"
+
+[node name="LevelBtn" type="Button" parent="LevelSelector"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+offset_left = 21.5
+offset_top = 54.5
+offset_right = 113.5
+offset_bottom = 104.5
+theme_override_font_sizes/font_size = 28
+text = "1"
+script = ExtResource("5_pt514")
+level_id = 1
+
+[node name="BackBtn" type="Button" parent="LevelSelector"]
+layout_mode = 0
+anchor_left = 0.899065
+anchor_top = 0.0557769
+anchor_right = 0.957009
+anchor_bottom = 0.14741
+text = "<"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Main/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="LevelSelector/LevelBtn" to="LevelSelector/LevelBtn" method="_on_pressed"]
+[connection signal="pressed" from="LevelSelector/BackBtn" to="." method="_on_back_btn_pressed"]
