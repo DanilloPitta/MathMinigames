@@ -12,13 +12,25 @@ const equations = [
 		
 	},
 	{
-		# Y = 12
+		# X = 42
 		"id": 2,
+		"type": "fraction",
+		"statement": "Calcule e simplifique a fração:",
+		"image": "fraction-2.png",
+		"numerator": "2",
+		"denominator": "7",
+		"tip": "Para realizar a simplificação basta dividir o numerador e o denominador pelo mesmo número natural, diferente de um, até chegar a uma fração que não mais seja divisível.",
+		"values_need": [true, false, false]
+		
+	},
+	{
+		# Y = 7
+		"id": 3,
 		"type": "normal",
-		"statement": "Um retângulo tem uma largura de Y unidades e um perímetro de 40 unidades. Qual é o valor da sua altura?",
+		"statement": "2x + 3 = y. Qual é o valor de x?",
 		"image": null,
-		"response": "8",
-		"tip": "Perímetro = 2 * (largura + altura)",
+		"response": "2",
+		"tip": "Comece isolando o termo com x",
 		"values_need": [false, true, false]
 	}
 	
