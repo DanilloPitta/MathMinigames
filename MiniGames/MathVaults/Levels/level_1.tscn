@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bna0n73ou7qps"]
+[gd_scene load_steps=37 format=3 uid="uid://bna0n73ou7qps"]
 
 [ext_resource type="Texture2D" uid="uid://cc8vpqusdr3m8" path="res://MiniGames/MathVaults/Assets/Tiles/terreno.png" id="1_5m0jf"]
 [ext_resource type="PackedScene" uid="uid://b7qa4674fm12d" path="res://MiniGames/MathVaults/Scenes/player.tscn" id="1_86tfo"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://glme7wnd7sj2" path="res://MiniGames/MathVaults/Assets/Sprites/Key/key_one_frame.png" id="17_5ahxu"]
 [ext_resource type="PackedScene" uid="uid://q64y8u5hm47q" path="res://MiniGames/MathVaults/Scenes/level_door.tscn" id="18_hugs4"]
 [ext_resource type="PackedScene" uid="uid://ce7uuxjv8vny4" path="res://MiniGames/MathVaults/Scenes/key.tscn" id="19_fcxvb"]
+[ext_resource type="PackedScene" uid="uid://smrpvji4nxa1" path="res://MiniGames/MathVaults/Scenes/angela_talk.tscn" id="22_278rb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tobp1"]
 texture = ExtResource("1_5m0jf")
@@ -368,5 +369,8 @@ position = Vector2(680, -72)
 
 [node name="Key" parent="." instance=ExtResource("19_fcxvb")]
 position = Vector2(664, 77)
+
+[node name="AngelaTalk" parent="." instance=ExtResource("22_278rb")]
+position = Vector2(127, 136)
 
 [connection signal="body_entered" from="FallArea" to="FallArea" method="_on_body_entered"]
