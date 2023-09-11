@@ -8,4 +8,7 @@ var tutorial_completed = false
 func _on_body_entered(body):
 	if body.name == "CharacterBody2D":
 		if !tutorial_completed:
-			angela_talk_ui.instantiate()
+			tutorial_completed = true
+			
+			var ui = angela_talk_ui.instantiate()
+			get_parent().add_child(ui)
