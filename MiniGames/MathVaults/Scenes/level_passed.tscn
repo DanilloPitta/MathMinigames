@@ -248,3 +248,6 @@ offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_tdrm0")
+
+[connection signal="pressed" from="CenterContainer/Control/ColorRect/Advance" to="." method="_on_advance_pressed"]
+[connection signal="pressed" from="CenterContainer/Control/ColorRect/Reload" to="." method="_on_reload_pressed"]

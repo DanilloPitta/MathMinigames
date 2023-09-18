@@ -1,6 +1,7 @@
-[gd_scene load_steps=36 format=3 uid="uid://b3ta3rkgym13k"]
+[gd_scene load_steps=37 format=3 uid="uid://b3ta3rkgym13k"]
 
 [ext_resource type="Texture2D" uid="uid://cc8vpqusdr3m8" path="res://MiniGames/MathVaults/Assets/Tiles/terreno.png" id="1_5ad2e"]
+[ext_resource type="Script" path="res://MiniGames/MathVaults/Scripts/level.gd" id="1_fxgmh"]
 [ext_resource type="Texture2D" uid="uid://lblmra57c7ej" path="res://MiniGames/MathVaults/Assets/Tiles/cofre.png" id="2_fd0un"]
 [ext_resource type="Texture2D" uid="uid://unuxu3odkkqo" path="res://MiniGames/MathVaults/Assets/Tiles/gramas_deco.png" id="3_mcbv8"]
 [ext_resource type="Texture2D" uid="uid://c10no0t4ij2jp" path="res://MiniGames/MathVaults/Assets/Tiles/cofre_deco.png" id="4_4qsfc"]
@@ -237,7 +238,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="level_1" type="Node2D"]
+[node name="level_2" type="Node2D"]
+script = ExtResource("1_fxgmh")
 
 [node name="TileMap1" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ttu1j")

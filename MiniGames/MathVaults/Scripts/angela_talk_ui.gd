@@ -23,3 +23,8 @@ func _on_next_btn_pressed():
 	get_node("ColorRect/Text").text = texts[current_text_idx].text
 	get_parent().get_node("CharacterBody2D/RemoteTransform2D").position.x = texts[current_text_idx].cam_x
 	get_parent().get_node("CharacterBody2D/RemoteTransform2D").position.y = texts[current_text_idx].cam_y
+	
+	if current_text_idx == 5:
+		queue_free()
+		Global.paused = false
+		

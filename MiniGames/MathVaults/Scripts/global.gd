@@ -9,3 +9,4 @@ var colleted_bubble_y
 var colleted_bubble_z
 var total_coins = 0
 var coins_collected = 0
+var current_level

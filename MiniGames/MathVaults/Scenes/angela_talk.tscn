@@ -33,12 +33,14 @@ size = Vector2(44, 68)
 script = ExtResource("1_cofr8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -1
 sprite_frames = SubResource("SpriteFrames_ee3jj")
 autoplay = "default"
 frame_progress = 0.924545
 flip_h = true
 
 [node name="AngelaBag" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(11, 0)
 texture = ExtResource("3_urdqy")
 
