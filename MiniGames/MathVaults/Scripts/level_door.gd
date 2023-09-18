@@ -8,9 +8,11 @@ var alert_opened = false
 func _on_body_entered(body):
 	if body.name == "CharacterBody2D":
 		if Global.key_collected == true:
-			var alert = level_passed_alert.instantiate()
+			if alert_opened == false:
+				alert_opened = true
+				var alert = level_passed_alert.instantiate()
 			
-			get_parent().add_child(alert)
+				get_parent().add_child(alert)
 		else:
 			if alert_opened == false:
 				alert_opened = true

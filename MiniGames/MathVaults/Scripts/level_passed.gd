@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-
 func _ready():
 	display_stars()
 	
@@ -22,6 +21,7 @@ func display_stars():
 
 
 func _on_reload_pressed():
+	reset_global_vars()
 	get_tree().reload_current_scene()
 
 func _on_advance_pressed():
