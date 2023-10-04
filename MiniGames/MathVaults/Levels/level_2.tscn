@@ -383,7 +383,6 @@ scale = Vector2(2.125, 2.125)
 texture = ExtResource("18_b7tf8")
 
 [node name="Controls" parent="." instance=ExtResource("19_8s6yu")]
-visible = false
 
 [node name="LevelDoor" parent="." instance=ExtResource("20_p1rkf")]
 position = Vector2(792, -232)
