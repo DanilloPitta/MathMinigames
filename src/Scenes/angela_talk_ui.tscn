@@ -1,0 +1,120 @@
+[gd_scene load_steps=12 format=3 uid="uid://dom66vihrde26"]
+
+[ext_resource type="Texture2D" uid="uid://66p5l6sqnvn0" path="res://src/Assets/Sprites/NPCs/Angela/idle.png" id="1_d5ao4"]
+[ext_resource type="Script" path="res://src/Scripts/angela_talk_ui.gd" id="1_dtk4h"]
+[ext_resource type="FontFile" uid="uid://dm8dwovr228s4" path="res://src/Assets/Fonts/Pixellari.ttf" id="2_m6xhs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t766"]
+atlas = ExtResource("1_d5ao4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1a8i"]
+atlas = ExtResource("1_d5ao4")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o5bsv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t766")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1a8i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpp1m"]
+bg_color = Color(0, 0.552941, 0.831373, 1)
+border_width_bottom = 3
+border_color = Color(0, 0.393333, 0.59, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgg0l"]
+bg_color = Color(0, 0.552941, 0.831373, 1)
+border_width_bottom = 3
+border_color = Color(0, 0.393333, 0.59, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pv03"]
+bg_color = Color(0, 0.552941, 0.831373, 1)
+border_width_bottom = 3
+border_color = Color(0, 0.393333, 0.59, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86sy5"]
+bg_color = Color(0, 0.552941, 0.831373, 1)
+border_width_bottom = 3
+border_color = Color(0, 0.393333, 0.59, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fr246"]
+bg_color = Color(0, 0.552941, 0.831373, 1)
+border_width_bottom = 3
+border_color = Color(0, 0.393333, 0.59, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="AngelaTalkUI" type="CanvasLayer"]
+script = ExtResource("1_dtk4h")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -110.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.470588)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect"]
+position = Vector2(102.75, 81.25)
+scale = Vector2(8.65625, 8.65625)
+sprite_frames = SubResource("SpriteFrames_o5bsv")
+frame_progress = 1.0
+
+[node name="Text" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 16.0
+offset_right = 544.0
+offset_bottom = 94.0
+theme_override_fonts/font = ExtResource("2_m6xhs")
+theme_override_font_sizes/font_size = 16
+text = "Olá estudante, boas vindas ao minigame MathVaults!"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NextBtn" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 29.0
+offset_right = 611.0
+offset_bottom = 79.0
+theme_override_fonts/font = ExtResource("2_m6xhs")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxFlat_vpp1m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cgg0l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3pv03")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_86sy5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fr246")
+text = ">"
+
+[connection signal="pressed" from="ColorRect/NextBtn" to="." method="_on_next_btn_pressed"]
