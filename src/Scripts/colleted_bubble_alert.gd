@@ -7,11 +7,11 @@ func _ready():
 	$AnimationPlayer.play("fade_in")
 	
 	if type == "x":
-		$MarginContainer/ColorRect/TextureRect.texture = load("res://MiniGames/MathVaults/Assets/Sprites/ValuesBubbles/x_bubble.png")
+		$MarginContainer/ColorRect/TextureRect.texture = load("res://src/Assets/Sprites/ValuesBubbles/x_bubble.png")
 		$MarginContainer/ColorRect/Title.text = "VOCÊ OBTEVE O VALOR DE X"
 		$MarginContainer/ColorRect/Value.text = value
 	elif type == "y":
-		$MarginContainer/ColorRect/TextureRect.texture = load("res://MiniGames/MathVaults/Assets/Sprites/ValuesBubbles/y_bubble.png")
+		$MarginContainer/ColorRect/TextureRect.texture = load("res://src/Assets/Sprites/ValuesBubbles/y_bubble.png")
 		$MarginContainer/ColorRect/Title.text = "VOCÊ OBTEVE O VALOR DE Y"
 		$MarginContainer/ColorRect/Value.text = value
 		

@@ -85,9 +85,9 @@ func wrong_response():
 	screen_wrong_alert.visible = false
 	
 func get_equation_by_id(id):
-	for equation in equations_list.equations:
-		if equation.id == id:
-			return equation
+	for equation_ in equations_list.equations:
+		if equation_.id == id:
+			return equation_
 			
 func open_door():
 	var doors = get_parent().get_node("Doors").get_children()
