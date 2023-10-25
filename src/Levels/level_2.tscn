@@ -240,6 +240,8 @@ animations = [{
 
 [node name="level_2" type="Node2D"]
 script = ExtResource("1_fxgmh")
+level_plate = "planicies_dos_cofres.png"
+level_number = 2
 
 [node name="TileMap1" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ttu1j")
