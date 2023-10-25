@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bna0n73ou7qps"]
+[gd_scene load_steps=41 format=3 uid="uid://bna0n73ou7qps"]
 
 [ext_resource type="Texture2D" uid="uid://cc8vpqusdr3m8" path="res://src/Assets/Tiles/terreno.png" id="1_5m0jf"]
 [ext_resource type="Script" path="res://src/Scripts/level.gd" id="1_8qv7o"]
@@ -23,6 +23,9 @@
 [ext_resource type="PackedScene" uid="uid://q64y8u5hm47q" path="res://src/Scenes/level_door.tscn" id="18_hugs4"]
 [ext_resource type="PackedScene" uid="uid://ce7uuxjv8vny4" path="res://src/Scenes/key.tscn" id="19_fcxvb"]
 [ext_resource type="PackedScene" uid="uid://smrpvji4nxa1" path="res://src/Scenes/angela_talk.tscn" id="22_278rb"]
+[ext_resource type="Texture2D" uid="uid://b4e0y5wawctkw" path="res://src/Assets/Sprites/ScenaryObjects/Vegetation/tree_1.png" id="24_ocy2w"]
+[ext_resource type="Texture2D" uid="uid://rmermbg01tn8" path="res://src/Assets/Sprites/ScenaryObjects/Vegetation/tree_2.png" id="25_oipvs"]
+[ext_resource type="Texture2D" uid="uid://bbupnrh1wvr46" path="res://src/Assets/Sprites/ScenaryObjects/Vegetation/tree_3.png" id="26_gw8jp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tobp1"]
 texture = ExtResource("1_5m0jf")
@@ -241,7 +244,7 @@ animations = [{
 
 [node name="level_1" type="Node2D"]
 script = ExtResource("1_8qv7o")
-level_plate = "floresta_dos_cofres.png"
+level_plate = "planicies_dos_cofres.png"
 level_number = 1
 
 [node name="TileMap1" type="TileMap" parent="."]
@@ -377,5 +380,47 @@ position = Vector2(664, 77)
 
 [node name="AngelaTalk" parent="." instance=ExtResource("22_278rb")]
 position = Vector2(127, 136)
+
+[node name="Trees" type="Node" parent="."]
+
+[node name="Tree1" type="Sprite2D" parent="Trees"]
+z_index = -1
+position = Vector2(222, 112)
+texture = ExtResource("24_ocy2w")
+
+[node name="Tree2" type="Sprite2D" parent="Trees"]
+z_index = -1
+position = Vector2(13, 112)
+texture = ExtResource("25_oipvs")
+
+[node name="Tree3" type="Sprite2D" parent="Trees"]
+z_index = -1
+position = Vector2(352, 80)
+texture = ExtResource("24_ocy2w")
+
+[node name="Tree4" type="Sprite2D" parent="Trees"]
+z_index = -1
+position = Vector2(464, 64)
+texture = ExtResource("26_gw8jp")
+
+[node name="Tree5" type="Sprite2D" parent="Trees"]
+z_index = -1
+position = Vector2(589, 208)
+texture = ExtResource("26_gw8jp")
+
+[node name="Tree6" type="Sprite2D" parent="Trees"]
+z_index = -1
+position = Vector2(422, 176)
+texture = ExtResource("25_oipvs")
+
+[node name="Tree7" type="Sprite2D" parent="Trees"]
+z_index = -1
+position = Vector2(620, -80)
+texture = ExtResource("24_ocy2w")
+
+[node name="Tree8" type="Sprite2D" parent="Trees"]
+z_index = -1
+position = Vector2(154, 112)
+texture = ExtResource("26_gw8jp")
 
 [connection signal="body_entered" from="FallArea" to="FallArea" method="_on_body_entered"]

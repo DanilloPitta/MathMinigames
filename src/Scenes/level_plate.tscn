@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://diph20w4arysg"]
 
 [ext_resource type="Script" path="res://src/Scripts/level_plate.gd" id="1_g18dh"]
-[ext_resource type="Texture2D" uid="uid://bbu7y0ngn2j6u" path="res://src/Assets/Hud/Levels_Plates/floresta_dos_cofres.png" id="2_l2c4r"]
+[ext_resource type="Texture2D" uid="uid://bbu7y0ngn2j6u" path="res://src/Assets/Hud/Levels_Plates/planicies_dos_cofres.png" id="2_052y6"]
 
 [sub_resource type="Animation" id="Animation_x45gs"]
 length = 0.001
@@ -90,7 +90,7 @@ offset_right = 129.0
 offset_bottom = 51.5001
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_l2c4r")
+texture = ExtResource("2_052y6")
 expand_mode = 1
 stretch_mode = 5
 
