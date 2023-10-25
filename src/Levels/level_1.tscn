@@ -393,11 +393,6 @@ z_index = -1
 position = Vector2(13, 112)
 texture = ExtResource("25_oipvs")
 
-[node name="Tree3" type="Sprite2D" parent="Trees"]
-z_index = -1
-position = Vector2(352, 80)
-texture = ExtResource("24_ocy2w")
-
 [node name="Tree4" type="Sprite2D" parent="Trees"]
 z_index = -1
 position = Vector2(464, 64)
