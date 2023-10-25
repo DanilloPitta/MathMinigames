@@ -10,5 +10,8 @@ func _on_body_entered(body):
 		if !tutorial_completed:
 			tutorial_completed = true
 			
+			body.position.x = self.position.x - 20
+			body.position.y = self.position.y
+			
 			var ui = angela_talk_ui.instantiate()
 			get_parent().add_child(ui)
