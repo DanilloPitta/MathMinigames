@@ -8,4 +8,4 @@ extends Node2D
 func _ready():
 	var level_plate_ = level_plate_scene.instantiate()
 	level_plate_.plate_texture = level_plate
-	get_parent().add_child(level_plate_)
+	self.add_child(level_plate_)
