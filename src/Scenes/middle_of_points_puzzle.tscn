@@ -97,9 +97,9 @@ texture = ExtResource("1_qbf2x")
 
 [node name="Point" type="Label" parent="Crate"]
 offset_left = -8.0
-offset_top = 13.0
+offset_top = -1.0
 offset_right = 7.0
-offset_bottom = 24.0
+offset_bottom = 10.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("5_0rcn1")
