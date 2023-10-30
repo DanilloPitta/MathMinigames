@@ -6,10 +6,14 @@ var y1 = 2
 var y2 = 2
 
 func _ready():
-	$Crate.position.x = $Crate.position.x + 100
 	print(calc_middle_of_two_points(x1,x2,y1,y2))
 	
+	$AnimationPlayer.play("picker_to_deploy_pos")
+	await $AnimationPlayer.animation_finished
+	await get_tree().create_timer(0.5).timeout
+	$AnimationPlayer.play("deploy_crate")
 	
 func calc_middle_of_two_points(x1, x2, y1, y2):
 	return pow(pow(x2 - x1, 2) + pow(y2 - y1, 2), (1.0/2.0))
+	
 

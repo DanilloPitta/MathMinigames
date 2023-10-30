@@ -1,39 +1,146 @@
-[gd_scene load_steps=6 format=3 uid="uid://483mkp5fbd6q"]
+[gd_scene load_steps=11 format=3 uid="uid://483mkp5fbd6q"]
 
 [ext_resource type="Texture2D" uid="uid://c40b1f06x1rin" path="res://src/Assets/Sprites/MidleOfPointPuzzle/crate.png" id="1_qbf2x"]
 [ext_resource type="Script" path="res://src/Scripts/middle_of_points_puzzle.gd" id="1_r00hc"]
 [ext_resource type="Texture2D" uid="uid://dt8r1onqj45vd" path="res://src/Assets/Sprites/MidleOfPointPuzzle/crate_picker_structory.png" id="3_oolb3"]
 [ext_resource type="Texture2D" uid="uid://cemuab0h7jvws" path="res://src/Assets/Sprites/MidleOfPointPuzzle/line.png" id="4_64mje"]
 [ext_resource type="FontFile" uid="uid://dm8dwovr228s4" path="res://src/Assets/Fonts/Pixellari.ttf" id="5_0rcn1"]
+[ext_resource type="Texture2D" uid="uid://rky1gxfg1oas" path="res://src/Assets/Sprites/MidleOfPointPuzzle/crate_picker.png" id="6_ycokf"]
+
+[sub_resource type="Animation" id="Animation_nyev5"]
+resource_name = "picker_to_deploy_pos"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CratePicker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-42, -32), Vector2(15, -32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Crate:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-42, -12), Vector2(15, -12)]
+}
+
+[sub_resource type="Animation" id="Animation_2xnsa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CratePicker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-42, -32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Crate:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-42, -12)]
+}
+
+[sub_resource type="Animation" id="Animation_7whfx"]
+resource_name = "deploy_crate"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Crate:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(15, -12), Vector2(15, 67)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_my52y"]
+_data = {
+"RESET": SubResource("Animation_2xnsa"),
+"deploy_crate": SubResource("Animation_7whfx"),
+"picker_to_deploy_pos": SubResource("Animation_nyev5")
+}
 
 [node name="MiddleOfPointsPuzzle" type="Node2D"]
+position = Vector2(122, 81)
 script = ExtResource("1_r00hc")
 
+[node name="CratePicker" type="Sprite2D" parent="."]
+position = Vector2(-42, -32)
+texture = ExtResource("6_ycokf")
+
 [node name="Crate" type="Sprite2D" parent="."]
-position = Vector2(8, -7)
+position = Vector2(-42, -12)
 texture = ExtResource("1_qbf2x")
+
+[node name="Point" type="Label" parent="Crate"]
+offset_left = -8.0
+offset_top = 13.0
+offset_right = 7.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("5_0rcn1")
+theme_override_font_sizes/font_size = 8
+text = "C"
+horizontal_alignment = 1
+
+[node name="Dot" type="Label" parent="Crate"]
+offset_left = -8.0
+offset_top = -3.0
+offset_right = 7.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("5_0rcn1")
+theme_override_font_sizes/font_size = 18
+text = "."
+horizontal_alignment = 1
 
 [node name="CratePickerStructory" type="Sprite2D" parent="."]
 texture = ExtResource("3_oolb3")
 
 [node name="Line" type="Sprite2D" parent="."]
-position = Vector2(13, 79)
+position = Vector2(16, 79)
 texture = ExtResource("4_64mje")
 
 [node name="Point" type="Label" parent="."]
-offset_left = -52.0
+offset_left = -49.0
 offset_top = 67.0
-offset_right = -26.0
+offset_right = -23.0
 offset_bottom = 78.0
 theme_override_fonts/font = ExtResource("5_0rcn1")
 theme_override_font_sizes/font_size = 8
 text = "A (3, 2)"
 
 [node name="Point2" type="Label" parent="."]
-offset_left = 54.0
+offset_left = 57.0
 offset_top = 67.0
-offset_right = 80.0
+offset_right = 83.0
 offset_bottom = 78.0
 theme_override_fonts/font = ExtResource("5_0rcn1")
 theme_override_font_sizes/font_size = 8
 text = "B (0, 2)"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_my52y")
+}
