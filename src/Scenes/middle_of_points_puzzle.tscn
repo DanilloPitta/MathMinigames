@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://483mkp5fbd6q"]
+
+[ext_resource type="Texture2D" uid="uid://c40b1f06x1rin" path="res://src/Assets/Sprites/MidleOfPointPuzzle/crate.png" id="1_qbf2x"]
+[ext_resource type="Script" path="res://src/Scripts/middle_of_points_puzzle.gd" id="1_r00hc"]
+[ext_resource type="Texture2D" uid="uid://dt8r1onqj45vd" path="res://src/Assets/Sprites/MidleOfPointPuzzle/crate_picker_structory.png" id="3_oolb3"]
+[ext_resource type="Texture2D" uid="uid://cemuab0h7jvws" path="res://src/Assets/Sprites/MidleOfPointPuzzle/line.png" id="4_64mje"]
+[ext_resource type="FontFile" uid="uid://dm8dwovr228s4" path="res://src/Assets/Fonts/Pixellari.ttf" id="5_0rcn1"]
+
+[node name="MiddleOfPointsPuzzle" type="Node2D"]
+script = ExtResource("1_r00hc")
+
+[node name="Crate" type="Sprite2D" parent="."]
+position = Vector2(8, -7)
+texture = ExtResource("1_qbf2x")
+
+[node name="CratePickerStructory" type="Sprite2D" parent="."]
+texture = ExtResource("3_oolb3")
+
+[node name="Line" type="Sprite2D" parent="."]
+position = Vector2(13, 79)
+texture = ExtResource("4_64mje")
+
+[node name="Point" type="Label" parent="."]
+offset_left = -52.0
+offset_top = 67.0
+offset_right = -26.0
+offset_bottom = 78.0
+theme_override_fonts/font = ExtResource("5_0rcn1")
+theme_override_font_sizes/font_size = 8
+text = "A (3, 2)"
+
+[node name="Point2" type="Label" parent="."]
+offset_left = 54.0
+offset_top = 67.0
+offset_right = 80.0
+offset_bottom = 78.0
+theme_override_fonts/font = ExtResource("5_0rcn1")
+theme_override_font_sizes/font_size = 8
+text = "B (0, 2)"
