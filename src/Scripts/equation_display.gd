@@ -11,8 +11,8 @@ func _on_body_entered(body):
 		if completed == false && Global.equation_form_oppened == false:
 			Global.equation_form_oppened = true
 			
-			body.position.x = self.position.x - 15
 			body.position.y = self.position.y
+			body.animated_sprite.animation = "idle"
 			
 			var form = load("res://src/Scenes/equation_form.tscn").instantiate()
 			form.equation_id = equation_id
