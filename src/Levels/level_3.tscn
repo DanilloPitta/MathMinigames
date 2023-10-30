@@ -213,7 +213,7 @@ sources/6 = SubResource("TileSetAtlasSource_uwjff")
 sources/7 = SubResource("TileSetAtlasSource_vnqhm")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0t6n"]
-size = Vector2(661, 20)
+size = Vector2(420, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fr06i"]
 atlas = ExtResource("17_27b73")

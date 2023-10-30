@@ -8,6 +8,8 @@ var y2 = 2
 func _ready():
 	print(calc_middle_of_two_points(x1,x2,y1,y2))
 	
+	await get_tree().create_timer(5).timeout
+	
 	$AnimationPlayer.play("picker_to_deploy_pos")
 	await $AnimationPlayer.animation_finished
 	await get_tree().create_timer(0.5).timeout
