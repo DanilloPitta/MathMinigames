@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://blkqyfgo5jliv"]
+
+[ext_resource type="Texture2D" uid="uid://crv0dtgordjyx" path="res://src/Assets/Sprites/Clipboard/clipboard.png" id="1_kvfd5"]
+
+[node name="MOP PuzzleResolutionUI" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/CenterContainer"]
+custom_minimum_size = Vector2(260, 260)
+layout_mode = 2
+texture = ExtResource("1_kvfd5")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="Control/CenterContainer/TextureRect"]
+anchors_preset = 0
+offset_left = 58.0
+offset_top = 69.0
+offset_right = 202.0
+offset_bottom = 209.0
