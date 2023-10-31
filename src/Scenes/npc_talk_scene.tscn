@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=3 uid="uid://q3sdgfd7bpt3"]
+
+[ext_resource type="Script" path="res://src/Scripts/npc_talk_scene.gd" id="1_6lxy2"]
+[ext_resource type="Texture2D" uid="uid://cgif6k6gxasru" path="res://src/Assets/Sprites/NPCs/Worker/single_frame.png" id="2_kfdvr"]
+[ext_resource type="FontFile" uid="uid://dm8dwovr228s4" path="res://src/Assets/Fonts/Pixellari.ttf" id="2_u3ns3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ghxu"]
+bg_color = Color(0, 0.552941, 0.831373, 1)
+border_width_bottom = 3
+border_color = Color(0, 0.393333, 0.59, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ou5pt"]
+bg_color = Color(0, 0.552941, 0.831373, 1)
+border_width_bottom = 3
+border_color = Color(0, 0.393333, 0.59, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ecnv4"]
+bg_color = Color(0, 0.552941, 0.831373, 1)
+border_width_bottom = 3
+border_color = Color(0, 0.393333, 0.59, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5k1ln"]
+bg_color = Color(0, 0.552941, 0.831373, 1)
+border_width_bottom = 3
+border_color = Color(0, 0.393333, 0.59, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rpm6v"]
+bg_color = Color(0, 0.552941, 0.831373, 1)
+border_width_bottom = 3
+border_color = Color(0, 0.393333, 0.59, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="NPCTalkScene" type="CanvasLayer"]
+script = ExtResource("1_6lxy2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -110.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.470588)
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
+position = Vector2(96.5, 87.5)
+scale = Vector2(9.8125, 9.8125)
+texture = ExtResource("2_kfdvr")
+
+[node name="Text" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 16.0
+offset_right = 544.0
+offset_bottom = 94.0
+theme_override_fonts/font = ExtResource("2_u3ns3")
+theme_override_font_sizes/font_size = 16
+text = "Texto"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NextBtn" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 29.0
+offset_right = 611.0
+offset_bottom = 79.0
+theme_override_fonts/font = ExtResource("2_u3ns3")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ghxu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ou5pt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ecnv4")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_5k1ln")
+theme_override_styles/focus = SubResource("StyleBoxFlat_rpm6v")
+text = ">"
+
+[connection signal="pressed" from="ColorRect/NextBtn" to="." method="_on_next_btn_pressed"]

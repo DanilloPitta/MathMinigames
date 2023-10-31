@@ -1,38 +1,37 @@
-[gd_scene load_steps=11 format=3 uid="uid://483mkp5fbd6q"]
+[gd_scene load_steps=16 format=3 uid="uid://483mkp5fbd6q"]
 
 [ext_resource type="Texture2D" uid="uid://c40b1f06x1rin" path="res://src/Assets/Sprites/MidleOfPointPuzzle/crate.png" id="1_qbf2x"]
 [ext_resource type="Script" path="res://src/Scripts/middle_of_points_puzzle.gd" id="1_r00hc"]
+[ext_resource type="Texture2D" uid="uid://ckv31ckg83iq6" path="res://src/Assets/Sprites/NPCs/Worker/idle.png" id="2_idntk"]
 [ext_resource type="Texture2D" uid="uid://dt8r1onqj45vd" path="res://src/Assets/Sprites/MidleOfPointPuzzle/crate_picker_structory.png" id="3_oolb3"]
 [ext_resource type="Texture2D" uid="uid://cemuab0h7jvws" path="res://src/Assets/Sprites/MidleOfPointPuzzle/line.png" id="4_64mje"]
 [ext_resource type="FontFile" uid="uid://dm8dwovr228s4" path="res://src/Assets/Fonts/Pixellari.ttf" id="5_0rcn1"]
 [ext_resource type="Texture2D" uid="uid://rky1gxfg1oas" path="res://src/Assets/Sprites/MidleOfPointPuzzle/crate_picker.png" id="6_ycokf"]
 
-[sub_resource type="Animation" id="Animation_nyev5"]
-resource_name = "picker_to_deploy_pos"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CratePicker:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-42, -32), Vector2(15, -32)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Crate:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-42, -12), Vector2(15, -12)]
-}
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28pkr"]
+size = Vector2(9, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2lfv"]
+atlas = ExtResource("2_idntk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vv1j5"]
+atlas = ExtResource("2_idntk")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dk82j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2lfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vv1j5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
 
 [sub_resource type="Animation" id="Animation_2xnsa"]
 length = 0.001
@@ -76,6 +75,33 @@ tracks/0/keys = {
 "values": [Vector2(15, -12), Vector2(15, 67)]
 }
 
+[sub_resource type="Animation" id="Animation_nyev5"]
+resource_name = "picker_to_deploy_pos"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CratePicker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-42, -32), Vector2(15, -32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Crate:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-42, -12), Vector2(15, -12)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_my52y"]
 _data = {
 "RESET": SubResource("Animation_2xnsa"),
@@ -86,6 +112,19 @@ _data = {
 [node name="MiddleOfPointsPuzzle" type="Node2D"]
 position = Vector2(122, 81)
 script = ExtResource("1_r00hc")
+
+[node name="EntranceArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EntranceArea"]
+position = Vector2(-173.5, 2)
+shape = SubResource("RectangleShape2D_28pkr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-143, 72)
+sprite_frames = SubResource("SpriteFrames_dk82j")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.355281
 
 [node name="CratePicker" type="Sprite2D" parent="."]
 position = Vector2(-42, -32)
@@ -153,3 +192,5 @@ text = "B (0, 2)"
 libraries = {
 "": SubResource("AnimationLibrary_my52y")
 }
+
+[connection signal="body_entered" from="EntranceArea" to="." method="_on_entrance_area_body_entered"]
