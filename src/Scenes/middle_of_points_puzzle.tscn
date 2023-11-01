@@ -124,7 +124,8 @@ position = Vector2(-143, 72)
 sprite_frames = SubResource("SpriteFrames_dk82j")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.355281
+frame = 1
+frame_progress = 0.742393
 
 [node name="CratePicker" type="Sprite2D" parent="."]
 position = Vector2(-42, -32)

@@ -16,6 +16,7 @@ var completed = false
 func _on_entrance_area_body_entered(body):
 	if body.name == "CharacterBody2D" and completed == false:
 		Global.paused = true
+		$AnimatedSprite2D.flip_h = true
 		var npc_talk_scene = npc_talk.instantiate()
 		npc_talk_scene.text_changed.connect(_on_npc_talk_text_changed)
 		npc_talk_scene.npc_img_path = npc_talk_texture
@@ -29,6 +30,7 @@ func _on_npc_talk_text_changed(idx):
 		get_parent().get_node("Camera2D").zoom.x = 1.7
 		get_parent().get_node("Camera2D").zoom.y = 1.7
 	if idx == 4:
+		$AnimatedSprite2D.flip_h = false
 		var resolution_ui_scene = resolution_ui.instantiate()
 		resolution_ui_scene.completed.connect(_on_resolution_ui_completed)
 		get_parent().add_child(resolution_ui_scene)
