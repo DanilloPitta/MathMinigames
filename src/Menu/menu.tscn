@@ -99,7 +99,6 @@ text = "VOLTAR"
 metadata/_edit_use_anchors_ = true
 
 [node name="LevelSelector" type="ColorRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -147,6 +146,28 @@ text = "2"
 script = ExtResource("5_4njvq")
 level_id = 2
 
+[node name="LevelBtn3" type="Button" parent="LevelSelector"]
+custom_minimum_size = Vector2(50, 50)
+offset_left = 248.5
+offset_top = 54.5
+offset_right = 340.5
+offset_bottom = 104.5
+theme_override_font_sizes/font_size = 28
+text = "3"
+script = ExtResource("5_4njvq")
+level_id = 3
+
+[node name="LevelBtn4" type="Button" parent="LevelSelector"]
+custom_minimum_size = Vector2(50, 50)
+offset_left = 364.5
+offset_top = 54.5
+offset_right = 456.5
+offset_bottom = 104.5
+theme_override_font_sizes/font_size = 28
+text = "4"
+script = ExtResource("5_4njvq")
+level_id = 4
+
 [node name="BackBtn" type="Button" parent="LevelSelector"]
 layout_mode = 0
 anchor_left = 0.899065
@@ -159,4 +180,6 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Main/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="LevelSelector/LevelBtn" to="LevelSelector/LevelBtn" method="_on_pressed"]
 [connection signal="pressed" from="LevelSelector/LevelBtn2" to="LevelSelector/LevelBtn2" method="_on_pressed"]
+[connection signal="pressed" from="LevelSelector/LevelBtn3" to="LevelSelector/LevelBtn3" method="_on_pressed"]
+[connection signal="pressed" from="LevelSelector/LevelBtn4" to="LevelSelector/LevelBtn4" method="_on_pressed"]
 [connection signal="pressed" from="LevelSelector/BackBtn" to="." method="_on_back_btn_pressed"]
