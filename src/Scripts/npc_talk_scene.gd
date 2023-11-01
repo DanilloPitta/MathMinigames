@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+signal end
 signal text_changed(text_index)
 
 var texts
@@ -18,9 +19,15 @@ func _ready():
 
 
 func _on_next_btn_pressed():
+	if len(texts) == 1:
+		end.emit()
+		queue_free()
+		return
+	
 	current_text_idx += 1
 	get_node("ColorRect/Text").text = texts[current_text_idx]
 	text_changed.emit(current_text_idx)
 	
 	if current_text_idx == len(texts) - 1:
+		end.emit()
 		queue_free()

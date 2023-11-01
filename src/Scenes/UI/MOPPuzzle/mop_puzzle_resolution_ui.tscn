@@ -1,8 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://blkqyfgo5jliv"]
+[gd_scene load_steps=13 format=3 uid="uid://blkqyfgo5jliv"]
 
 [ext_resource type="Texture2D" uid="uid://crv0dtgordjyx" path="res://src/Assets/Sprites/Clipboard/clipboard.png" id="1_kvfd5"]
+[ext_resource type="Script" path="res://src/Scripts/mop_puzzle_resolution_ui.gd" id="1_l0hf4"]
+[ext_resource type="FontFile" uid="uid://dm8dwovr228s4" path="res://src/Assets/Fonts/Pixellari.ttf" id="2_yd61y"]
+[ext_resource type="Texture2D" uid="uid://c7f002bsn02ct" path="res://src/Assets/Sprites/MOP Papper/papper.png" id="4_0evlo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g5ly8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w75xx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lmynm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i3ny6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iqhfx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tmnem"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o1r8g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h0jwm"]
 
 [node name="MOP PuzzleResolutionUI" type="CanvasLayer"]
+script = ExtResource("1_l0hf4")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -11,6 +31,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.745098)
 
 [node name="CenterContainer" type="CenterContainer" parent="Control"]
 layout_mode = 1
@@ -28,9 +57,65 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="Control" type="Control" parent="Control/CenterContainer/TextureRect"]
-anchors_preset = 0
-offset_left = 58.0
-offset_top = 69.0
-offset_right = 202.0
-offset_bottom = 209.0
+[node name="LineEditXma" type="LineEdit" parent="Control/CenterContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.253846
+anchor_top = 0.438462
+anchor_right = 0.48101
+anchor_bottom = 0.557692
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.87451, 0.2, 0.2, 1)
+theme_override_fonts/font = ExtResource("2_yd61y")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g5ly8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w75xx")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_lmynm")
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEditXmb" type="LineEdit" parent="Control/CenterContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.526923
+anchor_top = 0.453846
+anchor_right = 0.754087
+anchor_bottom = 0.561538
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.87451, 0.2, 0.2, 1)
+theme_override_fonts/font = ExtResource("2_yd61y")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g5ly8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w75xx")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_lmynm")
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Submit" type="Button" parent="Control/CenterContainer/TextureRect"]
+layout_mode = 0
+anchor_left = 0.376923
+anchor_top = 0.611538
+anchor_right = 0.626923
+anchor_bottom = 0.830769
+theme_override_styles/normal = SubResource("StyleBoxEmpty_i3ny6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iqhfx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tmnem")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_o1r8g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h0jwm")
+metadata/_edit_use_anchors_ = true
+
+[node name="Papper" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0609375
+anchor_top = 0.059375
+anchor_right = 0.225
+anchor_bottom = 0.3875
+texture = ExtResource("4_0evlo")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Control/CenterContainer/TextureRect/Submit" to="." method="_on_submit_pressed"]
