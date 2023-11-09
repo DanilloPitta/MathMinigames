@@ -214,7 +214,7 @@ sources/6 = SubResource("TileSetAtlasSource_uwjff")
 sources/7 = SubResource("TileSetAtlasSource_vnqhm")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0t6n"]
-size = Vector2(420, 20)
+size = Vector2(539.5, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fr06i"]
 atlas = ExtResource("17_27b73")
@@ -350,7 +350,7 @@ position = Vector2(847, -132)
 script = ExtResource("15_w3poy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FallArea"]
-position = Vector2(713.5, 263)
+position = Vector2(653.75, 263)
 shape = SubResource("RectangleShape2D_n0t6n")
 
 [node name="Hud" type="CanvasLayer" parent="."]

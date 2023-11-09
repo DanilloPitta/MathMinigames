@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://m761rnpm5vs"]
+[gd_scene load_steps=37 format=3 uid="uid://m761rnpm5vs"]
 
 [ext_resource type="Script" path="res://src/Scripts/level.gd" id="1_lpetd"]
 [ext_resource type="Texture2D" uid="uid://cc8vpqusdr3m8" path="res://src/Assets/Tiles/terreno.png" id="2_ry03d"]
@@ -16,8 +16,10 @@
 [ext_resource type="Script" path="res://src/Scripts/Hud.gd" id="17_jmbcc"]
 [ext_resource type="Texture2D" uid="uid://b0dgoo5vov7t7" path="res://src/Assets/Sprites/Coin/coin.png" id="18_c7ycv"]
 [ext_resource type="PackedScene" uid="uid://483mkp5fbd6q" path="res://src/Scenes/middle_of_points_puzzle.tscn" id="18_wn7cl"]
+[ext_resource type="Texture2D" uid="uid://b4e0y5wawctkw" path="res://src/Assets/Sprites/ScenaryObjects/Vegetation/tree_1.png" id="19_in1y5"]
 [ext_resource type="FontFile" uid="uid://dm8dwovr228s4" path="res://src/Assets/Fonts/Pixellari.ttf" id="19_vnqkr"]
 [ext_resource type="Texture2D" uid="uid://glme7wnd7sj2" path="res://src/Assets/Sprites/Key/key_one_frame.png" id="20_dylqh"]
+[ext_resource type="Texture2D" uid="uid://bbupnrh1wvr46" path="res://src/Assets/Sprites/ScenaryObjects/Vegetation/tree_3.png" id="20_ystt6"]
 [ext_resource type="PackedScene" uid="uid://bbsa8nctv0rmb" path="res://src/Scenes/controls.tscn" id="21_q0dx1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tobp1"]
@@ -266,7 +268,7 @@ layer_2/modulate = Color(1, 1, 1, 1)
 layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 0
-layer_2/tile_data = PackedInt32Array(524296, 2, 0, 524293, 2, 1, 524295, 65538, 0)
+layer_2/tile_data = PackedInt32Array(524296, 2, 0, 524293, 2, 1, 524295, 65538, 0, 524318, 65538, 0, 524323, 2, 0, 524325, 2, 1)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("10_ghqjm")]
 position = Vector2(35, 136)
@@ -354,6 +356,16 @@ texture = ExtResource("20_dylqh")
 [node name="Controls" parent="." instance=ExtResource("21_q0dx1")]
 
 [node name="Trees" type="Node" parent="."]
+
+[node name="Tree1" type="Sprite2D" parent="Trees"]
+z_index = -1
+position = Vector2(104, 112)
+texture = ExtResource("19_in1y5")
+
+[node name="Tree4" type="Sprite2D" parent="Trees"]
+z_index = -1
+position = Vector2(534, 112)
+texture = ExtResource("20_ystt6")
 
 [node name="MiddleOfPointsPuzzle" parent="." instance=ExtResource("18_wn7cl")]
 z_index = -1
