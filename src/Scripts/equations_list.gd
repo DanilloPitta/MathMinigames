@@ -49,7 +49,7 @@ const equations = [
 		"statement": "Calcule e simplifique a fração:",
 		"image": "fraction-3.png",
 		"numerator": "2",
-		"denominator": "9",
+		"denominator": "3",
 		"tip": "Para realizar a simplificação basta dividir o numerador e o denominador pelo mesmo número natural, diferente de um, até chegar a uma fração que não mais seja divisível.",
 		"values_need": [false, true, false]
 	}
