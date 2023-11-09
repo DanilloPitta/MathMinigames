@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bna0n73ou7qps"]
+[gd_scene load_steps=42 format=3 uid="uid://bna0n73ou7qps"]
 
 [ext_resource type="Texture2D" uid="uid://cc8vpqusdr3m8" path="res://src/Assets/Tiles/terreno.png" id="1_5m0jf"]
 [ext_resource type="Script" path="res://src/Scripts/level.gd" id="1_8qv7o"]
@@ -20,6 +20,7 @@
 [ext_resource type="FontFile" uid="uid://dm8dwovr228s4" path="res://src/Assets/Fonts/Pixellari.ttf" id="15_mo4sp"]
 [ext_resource type="PackedScene" uid="uid://bbsa8nctv0rmb" path="res://src/Scenes/controls.tscn" id="16_a127g"]
 [ext_resource type="Texture2D" uid="uid://glme7wnd7sj2" path="res://src/Assets/Sprites/Key/key_one_frame.png" id="17_5ahxu"]
+[ext_resource type="PackedScene" uid="uid://c5gy8rtk7kr1w" path="res://src/Scenes/UI/HUD/menu_in_game_button.tscn" id="17_ce3th"]
 [ext_resource type="PackedScene" uid="uid://q64y8u5hm47q" path="res://src/Scenes/level_door.tscn" id="18_hugs4"]
 [ext_resource type="PackedScene" uid="uid://ce7uuxjv8vny4" path="res://src/Scenes/key.tscn" id="19_fcxvb"]
 [ext_resource type="PackedScene" uid="uid://smrpvji4nxa1" path="res://src/Scenes/angela_talk.tscn" id="22_278rb"]
@@ -333,6 +334,12 @@ shape = SubResource("RectangleShape2D_n0t6n")
 [node name="Hud" type="CanvasLayer" parent="."]
 script = ExtResource("13_mtlwd")
 
+[node name="MenuInGameButton" parent="Hud" instance=ExtResource("17_ce3th")]
+offset_left = 598.0
+offset_top = 6.0
+offset_right = 598.0
+offset_bottom = 6.0
+
 [node name="Coins" type="Control" parent="Hud"]
 layout_mode = 3
 anchors_preset = 0
@@ -362,8 +369,10 @@ vertical_alignment = 1
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -62.0
+offset_top = -4.0
+offset_right = -22.0
+offset_bottom = 36.0
 
 [node name="Key" type="Sprite2D" parent="Hud/Key"]
 position = Vector2(613, 27)

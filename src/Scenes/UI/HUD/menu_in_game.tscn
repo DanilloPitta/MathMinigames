@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1shllqh8nji8"]
+
+[ext_resource type="FontFile" uid="uid://dm8dwovr228s4" path="res://src/Assets/Fonts/Pixellari.ttf" id="1_0p04k"]
+[ext_resource type="Script" path="res://src/Scripts/UI/HUD/menu_in_game.gd" id="2_fmbrt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3knu7"]
+bg_color = Color(0.439216, 0.494118, 0.521569, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_m42br"]
+Button/fonts/font = ExtResource("1_0p04k")
+Button/styles/disabled = SubResource("StyleBoxFlat_3knu7")
+Button/styles/focus = SubResource("StyleBoxFlat_3knu7")
+Button/styles/hover = SubResource("StyleBoxFlat_3knu7")
+Button/styles/normal = SubResource("StyleBoxFlat_3knu7")
+Button/styles/pressed = SubResource("StyleBoxFlat_3knu7")
+Label/fonts/font = ExtResource("1_0p04k")
+
+[node name="MenuInGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_m42br")
+script = ExtResource("2_fmbrt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.745098)
+
+[node name="Main" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -88.0
+offset_right = 117.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.862745)
+
+[node name="Continue" type="Button" parent="Main"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.068376
+anchor_top = 0.1875
+anchor_right = 0.935897
+anchor_bottom = 0.454545
+offset_right = 1.52588e-05
+grow_horizontal = 2
+grow_vertical = 2
+text = "CONTINUAR"
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Button" parent="Main"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0683761
+anchor_top = 0.545455
+anchor_right = 0.935897
+anchor_bottom = 0.8125
+grow_horizontal = 2
+grow_vertical = 2
+text = "VOLTAR"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Main/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Main/Back" to="." method="_on_back_pressed"]

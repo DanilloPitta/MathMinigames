@@ -149,6 +149,7 @@ level_id = 2
 
 [node name="LevelBtn3" type="Button" parent="LevelSelector"]
 custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
 offset_left = 248.5
 offset_top = 54.5
 offset_right = 340.5
@@ -160,6 +161,7 @@ level_id = 3
 
 [node name="LevelBtn4" type="Button" parent="LevelSelector"]
 custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
 offset_left = 364.5
 offset_top = 54.5
 offset_right = 456.5

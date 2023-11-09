@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5gy8rtk7kr1w"]
+
+[ext_resource type="Script" path="res://src/Scripts/UI/HUD/menu_in_game_button.gd" id="1_mpimb"]
+[ext_resource type="Texture2D" uid="uid://b56m2miuikjnb" path="res://src/Assets/Icons/hamburger-menu-icon.png" id="1_yyr0d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujrje"]
+bg_color = Color(0, 0, 0, 0.862745)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[node name="MenuInGameButton" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_mpimb")
+
+[node name="Open" type="Button" parent="."]
+layout_mode = 1
+offset_right = 36.0
+offset_bottom = 36.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujrje")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujrje")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujrje")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ujrje")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujrje")
+
+[node name="TextureRect" type="TextureRect" parent="Open"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yyr0d")
+expand_mode = 1
+
+[connection signal="pressed" from="Open" to="." method="_on_open_pressed"]

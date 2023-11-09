@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://b3ta3rkgym13k"]
+[gd_scene load_steps=41 format=3 uid="uid://b3ta3rkgym13k"]
 
 [ext_resource type="Texture2D" uid="uid://cc8vpqusdr3m8" path="res://src/Assets/Tiles/terreno.png" id="1_5ad2e"]
 [ext_resource type="Script" path="res://src/Scripts/level.gd" id="1_fxgmh"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://src/Scripts/Hud.gd" id="15_nrn16"]
 [ext_resource type="Texture2D" uid="uid://b0dgoo5vov7t7" path="res://src/Assets/Sprites/Coin/coin.png" id="16_bhj61"]
 [ext_resource type="FontFile" uid="uid://dm8dwovr228s4" path="res://src/Assets/Fonts/Pixellari.ttf" id="17_aavn3"]
+[ext_resource type="PackedScene" uid="uid://c5gy8rtk7kr1w" path="res://src/Scenes/UI/HUD/menu_in_game_button.tscn" id="17_f22b1"]
 [ext_resource type="Texture2D" uid="uid://glme7wnd7sj2" path="res://src/Assets/Sprites/Key/key_one_frame.png" id="18_b7tf8"]
 [ext_resource type="PackedScene" uid="uid://bbsa8nctv0rmb" path="res://src/Scenes/controls.tscn" id="19_8s6yu"]
 [ext_resource type="PackedScene" uid="uid://q64y8u5hm47q" path="res://src/Scenes/level_door.tscn" id="20_p1rkf"]
@@ -221,7 +222,7 @@ region = Rect2(0, 16, 16, 16)
 atlas = ExtResource("16_bhj61")
 region = Rect2(16, 16, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7ypmt"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_nfvjq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -350,6 +351,12 @@ door_id = 2
 [node name="Hud" type="CanvasLayer" parent="."]
 script = ExtResource("15_nrn16")
 
+[node name="MenuInGameButton" parent="Hud" instance=ExtResource("17_f22b1")]
+offset_left = 598.0
+offset_top = 6.0
+offset_right = 598.0
+offset_bottom = 6.0
+
 [node name="Coins" type="Control" parent="Hud"]
 layout_mode = 3
 anchors_preset = 0
@@ -359,7 +366,7 @@ offset_bottom = 40.0
 [node name="Coin" type="AnimatedSprite2D" parent="Hud/Coins"]
 position = Vector2(21.5, 21.5)
 scale = Vector2(1.4375, 1.4375)
-sprite_frames = SubResource("SpriteFrames_7ypmt")
+sprite_frames = SubResource("SpriteFrames_nfvjq")
 autoplay = "default"
 
 [node name="CoinsCollected" type="Label" parent="Hud/Coins"]
@@ -379,8 +386,10 @@ vertical_alignment = 1
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -62.0
+offset_top = -4.0
+offset_right = -22.0
+offset_bottom = 36.0
 
 [node name="Key" type="Sprite2D" parent="Hud/Key"]
 position = Vector2(613, 27)

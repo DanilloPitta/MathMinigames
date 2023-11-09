@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://m761rnpm5vs"]
+[gd_scene load_steps=35 format=3 uid="uid://m761rnpm5vs"]
 
 [ext_resource type="Script" path="res://src/Scripts/level.gd" id="1_lpetd"]
 [ext_resource type="Texture2D" uid="uid://cc8vpqusdr3m8" path="res://src/Assets/Tiles/terreno.png" id="2_ry03d"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cbp5hhwumun6" path="res://src/Assets/Tiles/cofre_top_left.png" id="9_hxjg6"]
 [ext_resource type="PackedScene" uid="uid://b7qa4674fm12d" path="res://src/Scenes/player.tscn" id="10_ghqjm"]
 [ext_resource type="Texture2D" uid="uid://cgefci4twe26a" path="res://src/Assets/Background/background.png" id="11_t22x8"]
+[ext_resource type="PackedScene" uid="uid://c5gy8rtk7kr1w" path="res://src/Scenes/UI/HUD/menu_in_game_button.tscn" id="14_kbjoy"]
 [ext_resource type="Script" path="res://src/Scripts/FallArea.gd" id="16_4dmeg"]
 [ext_resource type="Script" path="res://src/Scripts/Hud.gd" id="17_jmbcc"]
 [ext_resource type="Texture2D" uid="uid://b0dgoo5vov7t7" path="res://src/Assets/Sprites/Coin/coin.png" id="18_c7ycv"]
@@ -222,7 +223,7 @@ region = Rect2(0, 16, 16, 16)
 atlas = ExtResource("18_c7ycv")
 region = Rect2(16, 16, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7ypmt"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_b4u22"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -305,6 +306,12 @@ shape = SubResource("RectangleShape2D_n0t6n")
 [node name="Hud" type="CanvasLayer" parent="."]
 script = ExtResource("17_jmbcc")
 
+[node name="MenuInGameButton" parent="Hud" instance=ExtResource("14_kbjoy")]
+offset_left = 598.0
+offset_top = 6.0
+offset_right = 598.0
+offset_bottom = 6.0
+
 [node name="Coins" type="Control" parent="Hud"]
 layout_mode = 3
 anchors_preset = 0
@@ -314,7 +321,7 @@ offset_bottom = 40.0
 [node name="Coin" type="AnimatedSprite2D" parent="Hud/Coins"]
 position = Vector2(21.5, 21.5)
 scale = Vector2(1.4375, 1.4375)
-sprite_frames = SubResource("SpriteFrames_7ypmt")
+sprite_frames = SubResource("SpriteFrames_b4u22")
 autoplay = "default"
 
 [node name="CoinsCollected" type="Label" parent="Hud/Coins"]
@@ -334,8 +341,10 @@ vertical_alignment = 1
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -62.0
+offset_top = -4.0
+offset_right = -22.0
+offset_bottom = 36.0
 
 [node name="Key" type="Sprite2D" parent="Hud/Key"]
 position = Vector2(613, 27)
