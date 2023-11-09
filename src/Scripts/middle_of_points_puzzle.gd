@@ -27,8 +27,8 @@ func _on_npc_talk_text_changed(idx):
 	if idx == 2:
 		get_parent().get_node("CharacterBody2D/RemoteTransform2D").position.x = 220
 		get_parent().get_node("CharacterBody2D/RemoteTransform2D").position.y = -40
-		get_parent().get_node("Camera2D").zoom.x = 1.7
-		get_parent().get_node("Camera2D").zoom.y = 1.7
+		get_parent().get_node("Camera2D").zoom.x = 1.3
+		get_parent().get_node("Camera2D").zoom.y = 1.3
 	if idx == 4:
 		$AnimatedSprite2D.flip_h = false
 		var resolution_ui_scene = resolution_ui.instantiate()
