@@ -7,7 +7,6 @@ extends Node2D
 
 func _ready():
 	Global.paused = false
-	Global.total_coins = 0
 	var level_plate_ = level_plate_scene.instantiate()
 	level_plate_.plate_texture = level_plate
 	self.add_child(level_plate_)
