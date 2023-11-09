@@ -511,6 +511,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_1dack")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_i14av")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_lfgdk")
+virtual_keyboard_type = 2
 
 [node name="FractionInput" type="Control" parent="CanvasLayer/CenterContainer/Container/Border2/Container"]
 visible = false
@@ -531,6 +532,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1dack")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_i14av")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_lfgdk")
 alignment = 1
+virtual_keyboard_type = 2
 
 [node name="Denominator" type="LineEdit" parent="CanvasLayer/CenterContainer/Container/Border2/Container/FractionInput"]
 layout_mode = 0
@@ -545,6 +547,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1dack")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_i14av")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_lfgdk")
 alignment = 1
+virtual_keyboard_type = 2
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/CenterContainer/Container/Border2/Container/FractionInput"]
 layout_mode = 0
