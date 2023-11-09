@@ -36,7 +36,7 @@ const equations = [
 		# X = 7
 		"id": 4,
 		"type": "normal",
-		"statement": "Resolva a equação: 3x - y = 14. Qual é o valor de x?",
+		"statement": "Resolva a equação: 3x - y = 14. Qual é o valor de y?",
 		"image": null,
 		"response": "7",
 		"tip": "Comece isolando o termo com x",
